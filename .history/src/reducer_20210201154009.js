@@ -12,13 +12,13 @@ function reducer(state, action) {
             tempCart = state.cart.filter(item => item.id !== action.payload.id)
             return {...state, cart: tempCart}
         }else {
-         tempCart = state.cart.map((cartItem) => {
-            if (cartItem.id === action.payload.id) {
-                cartItem = { ...cartItem, amount: cartItem.amount - 1 };
-            }
+               tempCart = state.cart.map((cartItem) => {
+                 if (cartItem.id === action.payload.id) {
+                   cartItem = { ...cartItem, amount: cartItem.amount - 1 };
+                 }
 
-            return cartItem;
-            });
+                 return cartItem;
+               });
         }
         return {...state, cart: tempCart }
     }
@@ -38,25 +38,7 @@ function reducer(state, action) {
          return {...state, cart: state.cart.filter(item => item.id !== action.payload.id) }
      }
 
-    if(action.type === GET_TOTALS){
-        let { total, amount } = state.cart.reduce((cartTotal, cartItem ) => {
-            const { price, amount } = cartItem;
-
-            const itemTotal = price * amount;
-            cartTotal.total += itemTotal;
-
-            cartTotal.amount += amount;
-            console.log(price,amount)
-
-            return cartTotal;
-         }, {
-            total: 0,
-            amount: 0
-        });
-        total = parseFloat(total.toFixed(2));
-        
-        return {...state, total, amount}
-    }
+    IF()
 
     return state;
  

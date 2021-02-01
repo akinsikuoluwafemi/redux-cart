@@ -7,10 +7,9 @@ import { CLEAR_CART, GET_TOTALS } from '../actions';
 
 
 const CartContainer = ({ cart = [], total , dispatch }) => {
-  
  useEffect(() => {
    dispatch({ type: GET_TOTALS });
- })
+ },[])
  
   if (cart.length === 0) {
     return (

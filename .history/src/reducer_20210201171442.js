@@ -43,8 +43,8 @@ function reducer(state, action) {
             const { price, amount } = cartItem;
 
             const itemTotal = price * amount;
-            cartTotal.total += itemTotal;
-
+            cartTotal.total = itemTotal;
+            
             cartTotal.amount += amount;
             console.log(price,amount)
 
@@ -53,8 +53,6 @@ function reducer(state, action) {
             total: 0,
             amount: 0
         });
-        total = parseFloat(total.toFixed(2));
-        
         return {...state, total, amount}
     }
 

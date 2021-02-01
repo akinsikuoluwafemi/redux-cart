@@ -53,8 +53,7 @@ function reducer(state, action) {
             total: 0,
             amount: 0
         });
-        total = parseFloat(total.toFixed(2));
-        
+        total = total.toF
         return {...state, total, amount}
     }
 
